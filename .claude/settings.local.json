@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//mnt/d/**)",
+      "Bash(npm install *)",
+      "PowerShell(npm show next versions --json 2>&1)",
+      "PowerShell(npm show next dist-tags 2>&1)",
+      "Bash(Get-ChildItem -Path \"d:\\\\Construction\" -Force)",
+      "Bash(Select-Object Name, PSIsContainer)"
+    ]
+  }
+}
