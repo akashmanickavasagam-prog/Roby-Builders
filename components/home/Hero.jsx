@@ -34,9 +34,9 @@ const contactItems = [
 ];
 
 const stats = [
-  { value: '15+', label: 'Years Experience' },
-  { value: '200+', label: 'Projects Built' },
-  { value: '500+', label: 'Happy Families' },
+  { value: '3+', label: 'Years Experience' },
+  { value: '20+', label: 'Projects Built' },
+  { value: '30+', label: 'Happy Families' },
   { value: '100%', label: 'Quality Promise' },
 ];
 
