@@ -89,7 +89,7 @@ export default function WorkingSteps() {
 
   return (
     <section className="py-24 bg-white relative overflow-hidden">
-      <span className="section-wm top-8 right-0">Process</span>
+      <span className="section-wm top-8 right-0">rocess</span>
 
       <div className="max-w-7xl mx-auto px-5 lg:px-12 relative z-10">
         {/* Header */}

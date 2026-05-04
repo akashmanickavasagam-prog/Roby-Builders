@@ -71,7 +71,7 @@ const services = [
 ];
 
 const trustItems = [
-  { val: '15+', label: 'Years of Trust' },
+  { val: '3+', label: 'Years of Trust' },
   { val: 'ISO', label: 'Certified Quality' },
   { val: '0', label: 'Structural Defects' },
   { val: '24h', label: 'Response Time' },
