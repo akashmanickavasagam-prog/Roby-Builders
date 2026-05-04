@@ -24,7 +24,7 @@ export default function AboutPage() {
           { label: 'About Us', href: '/about' },
         ]}
         stats={[
-          { value: '15+', label: 'Years Experience' },
+          { value: '3+', label: 'Years Experience' },
           { value: '200+', label: 'Projects Completed' },
           { value: '500+', label: 'Happy Families' },
           { value: '50+', label: 'Expert Team' },

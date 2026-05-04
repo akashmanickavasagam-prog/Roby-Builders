@@ -16,7 +16,7 @@ export default function StorySection() {
             <span className="w-2 h-2 rounded-full bg-sandal" />
           </div>
           <p className="font-jost text-text-muted leading-relaxed mb-4">
-            Roby Builders was founded in 2009 by Er. Roby Renesh J with a single, clear mission: to deliver construction that families can truly trust. Starting with small residential projects in Karaikudi, the firm quickly earned a reputation for uncompromising quality and genuine care for clients.
+            Roby Builders was founded in 2024 by Er. Roby Renesh J with a single, clear mission: to deliver construction that families can truly trust. Starting with small residential projects in Karaikudi, the firm quickly earned a reputation for uncompromising quality and genuine care for clients.
           </p>
           <p className="font-jost text-text-muted leading-relaxed mb-4">
             Over 15 years, we have grown from a team of 5 to a 50-strong force of civil engineers, architects, skilled craftsmen, and project managers — each sharing the same commitment to excellence.

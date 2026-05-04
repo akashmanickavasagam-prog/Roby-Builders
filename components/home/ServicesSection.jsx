@@ -44,6 +44,20 @@ const services = [
   {
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2L2 7l10 5 10-5-10-5z" />
+        <path d="M2 17l10 5 10-5" />
+        <path d="M2 12l10 5 10-5" />
+      </svg>
+    ),
+    title: 'Interior Design',
+    subtitle: 'Spaces & Aesthetics',
+    desc: 'Elegant interiors tailored to your lifestyle — from concept boards to final furnishing, every detail curated.',
+    href: '/services/interior-design',
+    accent: '#A0522D',
+  },
+  {
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10" />
         <path d="M12 8v4l3 3" />
       </svg>
@@ -89,7 +103,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Service cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-16">
           {services.map((svc) => (
             <Link
               key={svc.title}
