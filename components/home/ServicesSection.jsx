@@ -52,7 +52,7 @@ const services = [
     title: 'Interior Design',
     subtitle: 'Spaces & Aesthetics',
     desc: 'Elegant interiors tailored to your lifestyle — from concept boards to final furnishing, every detail curated.',
-    href: '/services/interior-design',
+    href: '/services/interior',
     accent: '#A0522D',
   },
   {
