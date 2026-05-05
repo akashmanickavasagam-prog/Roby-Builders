@@ -38,12 +38,29 @@ export default function ContactForm() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+  const [error, setError] = useState('');
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 800));
-    setLoading(false);
-    setSubmitted(true);
+    setError('');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        setError('Something went wrong. Please call us directly at +91 97916 38957.');
+      }
+    } catch {
+      setError('Something went wrong. Please call us directly at +91 97916 38957.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -175,6 +192,12 @@ export default function ContactForm() {
             className="border border-sandal/40 rounded-xl px-4 py-3 font-jost text-sm text-text-dark placeholder-text-muted/50 focus:outline-none focus:border-brown-warm focus:ring-1 focus:ring-brown-warm/20 transition-colors bg-cream resize-none"
           />
         </div>
+
+        {error && (
+          <p className="font-jost text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3">
+            {error}
+          </p>
+        )}
 
         <button
           type="submit"
