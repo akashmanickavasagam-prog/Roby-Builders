@@ -34,7 +34,7 @@ export default function InteriorCTA() {
             </svg>
           </Link>
           <a
-            href="tel:+919876543210"
+            href="tel:+919791638957"
             className="btn-skew bg-white/10 border border-white/25 text-white hover:bg-white/20"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

@@ -29,7 +29,7 @@ export default function ServiceCTA() {
             </svg>
           </Link>
           <a
-            href="https://wa.me/919876543210"
+            href="https://wa.me/919791638957"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-skew bg-white/10 border border-white/30 text-white hover:bg-white/20"

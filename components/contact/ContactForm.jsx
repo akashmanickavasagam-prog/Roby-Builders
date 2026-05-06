@@ -96,7 +96,7 @@ export default function ContactForm() {
               value={form.phone}
               onChange={handleChange}
               required
-              placeholder="+91 98765 43210"
+              placeholder="+91 97916 38957"
               className="border border-sandal/40 rounded-xl px-4 py-3 font-jost text-sm text-text-dark placeholder-text-muted/50 focus:outline-none focus:border-brown-warm focus:ring-1 focus:ring-brown-warm/20 transition-colors bg-cream"
             />
           </div>

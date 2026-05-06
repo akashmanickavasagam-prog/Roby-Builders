@@ -17,7 +17,7 @@ export default function ContactStrip() {
         </div>
         <div className="flex flex-wrap gap-3">
           <a
-            href="https://wa.me/919876543210"
+            href="https://wa.me/919791638957"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-skew bg-sandal text-brown-deep hover:bg-sandal-light"

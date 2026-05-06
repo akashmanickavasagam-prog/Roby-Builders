@@ -14,7 +14,7 @@ export default function SiteVisitBanner() {
         </p>
         <div className="flex flex-wrap gap-3 justify-center">
           <a
-            href="tel:+919876543210"
+            href="tel:+919791638957"
             className="btn-skew bg-brown-deep text-white hover:bg-brown-warm inline-flex items-center gap-2"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -23,7 +23,7 @@ export default function SiteVisitBanner() {
             Call to Book Visit
           </a>
           <a
-            href="https://wa.me/919876543210?text=Hi%20Roby%20Builders%2C%20I%20would%20like%20to%20schedule%20a%20site%20visit."
+            href="https://wa.me/919791638957?text=Hi%20Roby%20Builders%2C%20I%20would%20like%20to%20schedule%20a%20site%20visit."
             target="_blank"
             rel="noopener noreferrer"
             className="btn-skew bg-sandal text-brown-deep hover:bg-brown-warm hover:text-white inline-flex items-center gap-2"

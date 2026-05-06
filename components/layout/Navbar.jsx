@@ -152,12 +152,12 @@ export default function Navbar() {
         {/* CTA */}
         <div className="hidden lg:flex items-center gap-3">
           <a
-            href="tel:+919876543210"
+            href="tel:+919791638957"
             className={`font-jost text-sm font-medium transition-colors ${
               scrolled ? 'text-text-muted hover:text-brown-warm' : 'text-white/80 hover:text-white'
             }`}
           >
-            +91 98765 43210
+            +91 97916 38957
           </a>
           <Link
             href="/contact"

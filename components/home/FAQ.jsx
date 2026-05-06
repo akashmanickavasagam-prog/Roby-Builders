@@ -89,7 +89,7 @@ export default function FAQ() {
         <div className="mt-12 text-center">
           <p className="font-jost text-text-muted mb-4">Still have questions?</p>
           <a
-            href="https://wa.me/919876543210"
+            href="https://wa.me/919791638957"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-skew bg-brown-deep text-white hover:bg-brown-warm inline-flex"

@@ -6,9 +6,9 @@ const contactDetails = [
       </svg>
     ),
     label: 'Phone',
-    value: '+91 98765 43210',
+    value: '+91 97916 38957',
     sub: 'Mon–Sat · 9 AM – 7 PM',
-    href: 'tel:+919876543210',
+    href: 'tel:+919791638957',
   },
   {
     icon: (
@@ -17,9 +17,9 @@ const contactDetails = [
       </svg>
     ),
     label: 'WhatsApp',
-    value: '+91 98765 43210',
+    value: '+91 97916 38957',
     sub: 'Quick response guaranteed',
-    href: 'https://wa.me/919876543210',
+    href: 'https://wa.me/919791638957',
     external: true,
   },
   {
@@ -30,9 +30,9 @@ const contactDetails = [
       </svg>
     ),
     label: 'Email',
-    value: 'info@robybuilders.in',
+    value: 'robybuilders@gmail.com',
     sub: 'Replies within 24 hours',
-    href: 'mailto:info@robybuilders.in',
+    href: 'mailto:robybuilders@gmail.com',
   },
   {
     icon: (
