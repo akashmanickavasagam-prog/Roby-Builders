@@ -44,7 +44,7 @@ export default function ContactForm() {
       <p className="font-jost text-sm text-text-muted mb-7">We respond to every enquiry within 24 hours.</p>
 
       <form
-        action="https://formsubmit.co/askmachi001@gmail.com"
+        action="https://formsubmit.co/robybuilders@gmail.com"
         method="POST"
         onSubmit={handleSubmit}
         className="flex flex-col gap-5"
