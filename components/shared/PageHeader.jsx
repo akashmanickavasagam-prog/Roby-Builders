@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default function PageHeader({ badge, title, tagline, bgImage, breadcrumbs = [], stats = [] }) {
+export default function PageHeader({ badge, title, tagline, bgImage, breadcrumbs = [], stats = [], overlayStart = 0.62, overlayEnd = 0.38, imgBrightness = 0.88 }) {
   return (
     <section className="relative pt-32 pb-16 overflow-hidden">
       {/* Background */}
@@ -9,12 +9,12 @@ export default function PageHeader({ badge, title, tagline, bgImage, breadcrumbs
         style={{
           backgroundImage: bgImage ? `url('${bgImage}')` : 'none',
           backgroundColor: '#3E1F0E',
-          filter: bgImage ? 'brightness(0.55) saturate(0.7)' : undefined,
+          filter: bgImage ? `brightness(${imgBrightness}) saturate(0.9)` : undefined,
         }}
       />
       <div
         className="absolute inset-0"
-        style={{ background: 'linear-gradient(135deg, rgba(62,31,14,0.82) 0%, rgba(62,31,14,0.62) 100%)' }}
+        style={{ background: `linear-gradient(135deg, rgba(62,31,14,${overlayStart}) 0%, rgba(62,31,14,${overlayEnd}) 100%)` }}
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 lg:px-12">

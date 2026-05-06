@@ -19,7 +19,7 @@ export default function InteriorDesignPage() {
         badge="Interior Design"
         title="Where Spaces Tell Your Story"
         tagline="Thoughtful design, timeless aesthetics, flawless execution"
-        bgImage="/images/interior-hero.jpg"
+        bgImage="/images/interior-design.png"
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'Services', href: '/#services' },

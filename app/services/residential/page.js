@@ -18,7 +18,7 @@ export default function ResidentialPage() {
         badge="Residential Services"
         title="Building Homes, Creating Memories"
         tagline="From foundation to finishing — every detail crafted with care"
-        bgImage="/images/residential-hero.jpg"
+        bgImage="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80"
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'Services', href: '/#services' },

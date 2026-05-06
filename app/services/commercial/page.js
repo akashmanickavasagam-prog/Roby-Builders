@@ -19,7 +19,7 @@ export default function CommercialPage() {
         badge="Commercial Services"
         title="Spaces That Drive Business Forward"
         tagline="From ground-breaking to grand opening — built for performance"
-        bgImage="/images/commercial-hero.jpg"
+        bgImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=80"
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'Services', href: '/#services' },

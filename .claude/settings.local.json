@@ -6,7 +6,10 @@
       "PowerShell(npm show next versions --json 2>&1)",
       "PowerShell(npm show next dist-tags 2>&1)",
       "Bash(Get-ChildItem -Path \"d:\\\\Construction\" -Force)",
-      "Bash(Select-Object Name, PSIsContainer)"
+      "Bash(Select-Object Name, PSIsContainer)",
+      "PowerShell(Rename-Item \"d:\\\\Construction\\\\public\\\\images\\\\interior design.png\" \"interior-design.png\")",
+      "PowerShell(Get-Process -Name \"node\" -ErrorAction SilentlyContinue)",
+      "PowerShell(Stop-Process -Force)"
     ]
   }
 }

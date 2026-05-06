@@ -4,11 +4,21 @@ export default function ConsultationHero() {
   return (
     <section
       className="relative min-h-[70vh] flex flex-col overflow-hidden"
-      style={{
-        background:
-          'linear-gradient(135deg, #2a1508 0%, #3E1F0E 40%, #6B3A20 80%, #9a6030 100%)',
-      }}
+      style={{ backgroundColor: '#3E1F0E' }}
     >
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=80')",
+          filter: 'brightness(0.75) saturate(0.85)',
+        }}
+      />
+      {/* Gradient overlay */}
+      <div
+        className="absolute inset-0"
+        style={{ background: 'linear-gradient(135deg, rgba(42,21,8,0.72) 0%, rgba(62,31,14,0.50) 100%)' }}
+      />
       {/* Dot pattern */}
       <div
         className="absolute inset-0 opacity-[0.07]"
