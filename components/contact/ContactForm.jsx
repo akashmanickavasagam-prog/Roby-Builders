@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 const services = [
   'Residential Construction',
@@ -30,8 +31,8 @@ const initialForm = {
 };
 
 export default function ContactForm() {
+  const router = useRouter();
   const [form, setForm] = useState(initialForm);
-  const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -52,7 +53,8 @@ export default function ContactForm() {
       });
       const data = await res.json();
       if (data.success) {
-        setSubmitted(true);
+        sessionStorage.setItem('roby_enquiry', JSON.stringify(form));
+        router.push('/thank-you');
       } else {
         setError('Something went wrong. Please call us directly at +91 97916 38957.');
       }
@@ -62,36 +64,6 @@ export default function ContactForm() {
       setLoading(false);
     }
   };
-
-  if (submitted) {
-    return (
-      <div className="bg-white rounded-3xl shadow-card p-10 flex flex-col items-center justify-center text-center min-h-[500px]">
-        <div className="w-16 h-16 rounded-full bg-sandal/20 flex items-center justify-center mb-5">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8B4E27" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="20 6 9 17 4 12" />
-          </svg>
-        </div>
-        <h3 className="font-playfair text-2xl font-bold text-brown-deep mb-2">Message Received!</h3>
-        <p className="font-jost text-text-muted text-sm leading-relaxed mb-6">
-          Thank you {form.name || 'for reaching out'}. We will contact you within 24 hours to discuss your project.
-        </p>
-        <a
-          href="https://wa.me/919876543210"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-skew bg-sandal text-brown-deep hover:bg-brown-warm hover:text-white inline-flex"
-        >
-          Continue on WhatsApp
-        </a>
-        <button
-          onClick={() => { setForm(initialForm); setSubmitted(false); }}
-          className="mt-3 font-jost text-sm text-text-muted hover:text-brown-warm transition-colors"
-        >
-          Send another message
-        </button>
-      </div>
-    );
-  }
 
   return (
     <div className="bg-white rounded-3xl shadow-card p-8 lg:p-10">
