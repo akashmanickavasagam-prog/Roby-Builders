@@ -18,7 +18,7 @@ export default function AboutPage() {
         badge="Our Story"
         title="Built on Trust, Crafted with Passion"
         tagline="15 years of turning visions into landmarks across Tamil Nadu"
-        bgImage="/images/about-hero.jpg"
+        bgImage="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1600&q=80"
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'About Us', href: '/about' },

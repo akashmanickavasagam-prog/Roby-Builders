@@ -5,12 +5,10 @@ import Link from 'next/link';
 import { projects } from '../../lib/projects';
 
 const FILTERS = [
-  { key: 'all',          label: 'All Projects' },
-  { key: 'residential',  label: 'Residential' },
-  { key: 'commercial',   label: 'Commercial' },
-  { key: 'renovation',   label: 'Renovation' },
-  { key: 'heritage',     label: 'Heritage' },
-  { key: 'institutional',label: 'Institutional' },
+  { key: 'all',         label: 'All Projects' },
+  { key: 'residential', label: 'Residential' },
+  { key: 'commercial',  label: 'Commercial' },
+  { key: 'renovation',  label: 'Renovation' },
 ];
 
 function PinSVG() {
@@ -337,12 +335,12 @@ export default function ProjectsClient() {
       <div className="bg-white border-b border-[rgba(201,168,124,0.2)] sticky top-[74px] z-[100] shadow-[0_4px_20px_rgba(62,31,14,0.05)]">
         <div className="max-w-[1200px] mx-auto px-[52px] flex items-center justify-between gap-5 max-md:px-5">
           {/* Tabs */}
-          <div className="flex overflow-x-auto hide-scrollbar">
+          <div className="flex flex-1 overflow-x-auto hide-scrollbar">
             {FILTERS.map(({ key, label }) => (
               <button
                 key={key}
                 onClick={() => setActiveFilter(key)}
-                className={`font-jost text-[11px] font-semibold tracking-[0.16em] uppercase whitespace-nowrap px-5 py-[18px] border-b-[2.5px] transition-colors duration-200 ${
+                className={`font-jost text-[11px] font-semibold tracking-[0.16em] uppercase whitespace-nowrap px-8 py-[18px] border-b-[2.5px] transition-colors duration-200 ${
                   activeFilter === key
                     ? 'text-brown-deep border-sandal'
                     : 'text-text-muted border-transparent hover:text-brown-mid'
@@ -383,7 +381,7 @@ export default function ProjectsClient() {
       </div>
 
       {/* ─── Grid ─── */}
-      <div className="max-w-[1200px] mx-auto px-[52px] pt-12 pb-20 max-md:px-5">
+      <div className="max-w-[1200px] mx-auto px-[52px] pt-5 pb-20 max-md:px-5">
         {/* Count bar */}
         <div className="flex items-center justify-between mb-7 pb-4 border-b border-[rgba(201,168,124,0.2)] flex-wrap gap-[10px]">
           <span className="font-jost text-[11px] font-medium text-text-muted tracking-[0.12em] uppercase">

@@ -6,11 +6,15 @@ export default function PageHeader({ badge, title, tagline, bgImage, breadcrumbs
       {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: bgImage ? `url('${bgImage}')` : 'none', backgroundColor: '#3E1F0E' }}
+        style={{
+          backgroundImage: bgImage ? `url('${bgImage}')` : 'none',
+          backgroundColor: '#3E1F0E',
+          filter: bgImage ? 'brightness(0.55) saturate(0.7)' : undefined,
+        }}
       />
       <div
         className="absolute inset-0"
-        style={{ background: 'linear-gradient(135deg, rgba(62,31,14,0.93) 0%, rgba(62,31,14,0.75) 100%)' }}
+        style={{ background: 'linear-gradient(135deg, rgba(62,31,14,0.82) 0%, rgba(62,31,14,0.62) 100%)' }}
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 lg:px-12">

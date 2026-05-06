@@ -18,7 +18,7 @@ export default function ContactPage() {
         badge="Get In Touch"
         title="Let's Build Your Dream Together"
         tagline="Reach out for a free consultation — we respond within 24 hours"
-        bgImage="/images/contact-hero.jpg"
+        bgImage="/images/Contact%20us.jpg"
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'Contact', href: '/contact' },
