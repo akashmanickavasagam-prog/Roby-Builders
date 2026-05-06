@@ -1,7 +1,6 @@
 'use client';
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRef } from 'react';
 
 const services = [
   'Residential Construction',
@@ -21,48 +20,22 @@ const budgetRanges = [
   'Not Sure Yet',
 ];
 
-const initialForm = {
-  name: '',
-  phone: '',
-  email: '',
-  service: '',
-  budget: '',
-  message: '',
-};
-
 export default function ContactForm() {
-  const router = useRouter();
-  const [form, setForm] = useState(initialForm);
-  const [loading, setLoading] = useState(false);
+  const nextRef = useRef(null);
 
-  const handleChange = (e) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
-
-  const [error, setError] = useState('');
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError('');
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
-      });
-      const data = await res.json();
-      if (data.success) {
-        sessionStorage.setItem('roby_enquiry', JSON.stringify(form));
-        router.push('/thank-you');
-      } else {
-        setError('Something went wrong. Please call us directly at +91 97916 38957.');
-      }
-    } catch {
-      setError('Something went wrong. Please call us directly at +91 97916 38957.');
-    } finally {
-      setLoading(false);
+  const handleSubmit = (e) => {
+    if (nextRef.current) {
+      nextRef.current.value = `${window.location.origin}/thank-you`;
     }
+    const fd = new FormData(e.target);
+    sessionStorage.setItem('roby_enquiry', JSON.stringify({
+      name: fd.get('name') || '',
+      phone: fd.get('phone') || '',
+      email: fd.get('email') || '',
+      service: fd.get('service') || '',
+      budget: fd.get('budget') || '',
+      message: fd.get('message') || '',
+    }));
   };
 
   return (
@@ -70,7 +43,18 @@ export default function ContactForm() {
       <h2 className="font-playfair text-2xl font-bold text-brown-deep mb-1">Send Us a Message</h2>
       <p className="font-jost text-sm text-text-muted mb-7">We respond to every enquiry within 24 hours.</p>
 
-      <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+      <form
+        action="https://formsubmit.co/askmachi001@gmail.com"
+        method="POST"
+        onSubmit={handleSubmit}
+        className="flex flex-col gap-5"
+      >
+        {/* FormSubmit configuration */}
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_subject" value="New Contact Form Message" />
+        <input type="hidden" name="_next" ref={nextRef} />
+
         <div className="grid sm:grid-cols-2 gap-4">
           <div className="flex flex-col gap-1.5">
             <label className="font-jost text-xs text-text-dark font-semibold uppercase tracking-widest">
@@ -79,8 +63,6 @@ export default function ContactForm() {
             <input
               type="text"
               name="name"
-              value={form.name}
-              onChange={handleChange}
               required
               placeholder="Er. Rajan Kumar"
               className="border border-sandal/40 rounded-xl px-4 py-3 font-jost text-sm text-text-dark placeholder-text-muted/50 focus:outline-none focus:border-brown-warm focus:ring-1 focus:ring-brown-warm/20 transition-colors bg-cream"
@@ -93,8 +75,6 @@ export default function ContactForm() {
             <input
               type="tel"
               name="phone"
-              value={form.phone}
-              onChange={handleChange}
               required
               placeholder="+91 97916 38957"
               className="border border-sandal/40 rounded-xl px-4 py-3 font-jost text-sm text-text-dark placeholder-text-muted/50 focus:outline-none focus:border-brown-warm focus:ring-1 focus:ring-brown-warm/20 transition-colors bg-cream"
@@ -109,8 +89,6 @@ export default function ContactForm() {
           <input
             type="email"
             name="email"
-            value={form.email}
-            onChange={handleChange}
             placeholder="you@example.com"
             className="border border-sandal/40 rounded-xl px-4 py-3 font-jost text-sm text-text-dark placeholder-text-muted/50 focus:outline-none focus:border-brown-warm focus:ring-1 focus:ring-brown-warm/20 transition-colors bg-cream"
           />
@@ -123,8 +101,6 @@ export default function ContactForm() {
             </label>
             <select
               name="service"
-              value={form.service}
-              onChange={handleChange}
               className="border border-sandal/40 rounded-xl px-4 py-3 font-jost text-sm text-text-dark focus:outline-none focus:border-brown-warm focus:ring-1 focus:ring-brown-warm/20 transition-colors bg-cream appearance-none"
             >
               <option value="">Select a service</option>
@@ -139,8 +115,6 @@ export default function ContactForm() {
             </label>
             <select
               name="budget"
-              value={form.budget}
-              onChange={handleChange}
               className="border border-sandal/40 rounded-xl px-4 py-3 font-jost text-sm text-text-dark focus:outline-none focus:border-brown-warm focus:ring-1 focus:ring-brown-warm/20 transition-colors bg-cream appearance-none"
             >
               <option value="">Select budget</option>
@@ -157,41 +131,20 @@ export default function ContactForm() {
           </label>
           <textarea
             name="message"
-            value={form.message}
-            onChange={handleChange}
             rows={4}
             placeholder="Describe your project — location, size, requirements..."
             className="border border-sandal/40 rounded-xl px-4 py-3 font-jost text-sm text-text-dark placeholder-text-muted/50 focus:outline-none focus:border-brown-warm focus:ring-1 focus:ring-brown-warm/20 transition-colors bg-cream resize-none"
           />
         </div>
 
-        {error && (
-          <p className="font-jost text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3">
-            {error}
-          </p>
-        )}
-
         <button
           type="submit"
-          disabled={loading}
-          className="btn-skew bg-brown-deep text-white hover:bg-brown-warm disabled:opacity-70 disabled:cursor-not-allowed justify-center"
+          className="btn-skew bg-brown-deep text-white hover:bg-brown-warm justify-center"
         >
-          {loading ? (
-            <>
-              <svg className="animate-spin" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="12" cy="12" r="10" strokeOpacity="0.3" />
-                <path d="M12 2a10 10 0 0 1 10 10" />
-              </svg>
-              Sending...
-            </>
-          ) : (
-            <>
-              Send Message
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </>
-          )}
+          Send Message
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
         </button>
       </form>
     </div>
